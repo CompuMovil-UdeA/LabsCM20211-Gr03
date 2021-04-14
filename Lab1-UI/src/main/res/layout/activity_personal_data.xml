@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PersonalDataActivity">
+
+
+    <TextView
+        android:id="@+id/txt_personalInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif"
+        android:text="Información Personal"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textField_names"
+        android:layout_width="285dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:hint="Nombres"
+        app:layout_constraintStart_toStartOf="@+id/txt_personalInfo"
+        app:layout_constraintTop_toBottomOf="@+id/txt_personalInfo"
+        app:startIconDrawable="@drawable/ic_name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="285dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            tools:layout_editor_absoluteX="32dp"
+            tools:layout_editor_absoluteY="124dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textField_lastname"
+        android:layout_width="285dp"
+        android:layout_height="60dp"
+        android:hint="Apellidos"
+        app:layout_constraintStart_toStartOf="@+id/textField_names"
+        app:layout_constraintTop_toBottomOf="@+id/textField_names"
+        app:startIconDrawable="@drawable/ic_add_lastname">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="285dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            tools:layout_editor_absoluteX="32dp"
+            tools:layout_editor_absoluteY="124dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:id="@+id/txt_gender"
+        android:layout_width="92dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:drawableStart="@drawable/ic_gender"
+        android:text="  Sexo: "
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/textField_lastname"
+        app:layout_constraintTop_toBottomOf="@+id/textField_lastname" />
+
+    <RadioGroup
+        android:id="@+id/rg_gender"
+        android:layout_width="189dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/textField_lastname"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toEndOf="@+id/txt_gender"
+        app:layout_constraintTop_toBottomOf="@+id/textField_lastname">
+
+        <RadioButton
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:text="Hombre" />
+
+        <RadioButton
+            android:layout_width="97dp"
+            android:layout_height="wrap_content"
+            android:text="Mujer" />
+
+    </RadioGroup>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
