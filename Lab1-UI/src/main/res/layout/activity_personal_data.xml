@@ -15,23 +15,25 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:fontFamily="sans-serif"
-        android:text="Información Personal"
+        android:text="@string/informacion_personal"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textField_names"
+        android:id="@+id/txt_names"
         android:layout_width="285dp"
         android:layout_height="60dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:hint="Nombres"
+        android:hint="@string/nombres"
         app:layout_constraintStart_toStartOf="@+id/txt_personalInfo"
         app:layout_constraintTop_toBottomOf="@+id/txt_personalInfo"
         app:startIconDrawable="@drawable/ic_name">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_names"
             android:layout_width="285dp"
             android:layout_height="wrap_content"
             android:background="@color/white"
@@ -41,15 +43,16 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textField_lastname"
+        android:id="@+id/txt_lastnames"
         android:layout_width="285dp"
         android:layout_height="60dp"
-        android:hint="Apellidos"
-        app:layout_constraintStart_toStartOf="@+id/textField_names"
-        app:layout_constraintTop_toBottomOf="@+id/textField_names"
+        android:hint="@string/apellidos"
+        app:layout_constraintStart_toStartOf="@+id/txt_names"
+        app:layout_constraintTop_toBottomOf="@+id/txt_names"
         app:startIconDrawable="@drawable/ic_add_lastname">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_lastnames"
             android:layout_width="285dp"
             android:layout_height="wrap_content"
             android:background="@color/white"
@@ -65,10 +68,10 @@
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
         android:drawableStart="@drawable/ic_gender"
-        android:text="  Sexo: "
+        android:text="@string/sexo"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/textField_lastname"
-        app:layout_constraintTop_toBottomOf="@+id/textField_lastname" />
+        app:layout_constraintStart_toStartOf="@+id/txt_lastnames"
+        app:layout_constraintTop_toBottomOf="@+id/txt_lastnames" />
 
     <RadioGroup
         android:id="@+id/rg_gender"
@@ -76,22 +79,71 @@
         android:layout_height="40dp"
         android:layout_marginTop="5dp"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/textField_lastname"
+        app:layout_constraintEnd_toEndOf="@+id/txt_lastnames"
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toEndOf="@+id/txt_gender"
-        app:layout_constraintTop_toBottomOf="@+id/textField_lastname">
+        app:layout_constraintTop_toBottomOf="@+id/txt_lastnames">
 
         <RadioButton
+            android:id="@+id/rb_man"
             android:layout_width="95dp"
             android:layout_height="wrap_content"
-            android:text="Hombre" />
+            android:text="@string/hombre" />
 
         <RadioButton
+            android:id="@+id/rb_women"
             android:layout_width="97dp"
             android:layout_height="wrap_content"
-            android:text="Mujer" />
+            android:text="@string/mujer" />
 
     </RadioGroup>
 
+    <TextView
+        android:id="@+id/txt_birthdayDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fecha_de_nacimiento"
+        app:layout_constraintBaseline_toBaselineOf="@+id/input_birthdayDate"
+        app:layout_constraintStart_toStartOf="@+id/txt_gender" />
+
+    <EditText
+        android:id="@+id/input_birthdayDate"
+        android:layout_width="127dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="true"
+        android:ems="7"
+        android:focusable="false"
+        android:hint="@string/dd_mm_yyyy"
+        android:inputType="date"
+        android:maxLines="1"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/rg_gender"
+        app:layout_constraintHorizontal_bias="0.43"
+        app:layout_constraintRight_toRightOf="@+id/txt_birthdayDate"
+        app:layout_constraintStart_toEndOf="@+id/txt_birthdayDate"
+        app:layout_constraintTop_toBottomOf="@+id/rg_gender" />
+
+    <Spinner
+        android:id="@+id/spinner_schoolGrade"
+        android:layout_width="275dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/input_birthdayDate"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txt_birthdayDate"
+        app:layout_constraintTop_toBottomOf="@+id/txt_birthdayDate" />
+
+    <Button
+        android:id="@+id/btn_next_infoContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/siguiente_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

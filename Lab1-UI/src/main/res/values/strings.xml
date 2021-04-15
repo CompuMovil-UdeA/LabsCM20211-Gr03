@@ -1,3 +1,22 @@
 <resources>
+
+    <!-- InfoPersonal Labels -->
     <string name="app_name">Labs20211-Gr03</string>
+    <string name="informacion_personal">Información Personal</string>
+    <string name="nombres">Nombres</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="sexo">Sexo:</string>
+    <string name="hombre">Hombre</string>
+    <string name="mujer">Mujer</string>
+    <string name="fecha_de_nacimiento">Fecha de Nacimiento:</string>
+    <string name="dd_mm_yyyy">dd-mm-yyyy</string>
+    <string name="siguiente_btn">Siguiente</string>
+    <string-array name="array_gradoEscolaridad">
+        <item>Grado de escolaridad</item>
+        <item>Primaria</item>
+        <item>Secundaria</item>
+        <item>Universitaria</item>
+        <item>Otro</item>
+    </string-array>
+
 </resources>
