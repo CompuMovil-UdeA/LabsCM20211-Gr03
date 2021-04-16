@@ -10,7 +10,7 @@
 
     <TextView
         android:id="@+id/txt_personalInfo"
-        android:layout_width="0dp"
+        android:layout_width="285dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -66,7 +66,7 @@
         android:id="@+id/txt_gender"
         android:layout_width="92dp"
         android:layout_height="0dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:drawableStart="@drawable/ic_gender"
         android:text="@string/sexo"
         android:textSize="18sp"
@@ -77,7 +77,7 @@
         android:id="@+id/rg_gender"
         android:layout_width="189dp"
         android:layout_height="40dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="@+id/txt_lastnames"
         app:layout_constraintHorizontal_bias="0.1"
@@ -98,40 +98,24 @@
 
     </RadioGroup>
 
+
     <TextView
         android:id="@+id/txt_birthdayDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_calendar"
         android:text="@string/fecha_de_nacimiento"
-        app:layout_constraintBaseline_toBaselineOf="@+id/input_birthDate"
+        android:textSize="18dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_showDatapicker"
         app:layout_constraintStart_toStartOf="@+id/txt_gender" />
-
-    <EditText
-        android:id="@+id/input_birthDate"
-        android:layout_width="127dp"
-        android:layout_height="42dp"
-        android:layout_marginEnd="16dp"
-        android:clickable="true"
-        android:ems="7"
-        android:focusable="false"
-        android:hint="@string/dd_mm_yyyy"
-        android:inputType="date"
-        android:maxLines="1"
-        android:textAlignment="center"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/rg_gender"
-        app:layout_constraintHorizontal_bias="0.43"
-        app:layout_constraintRight_toRightOf="@+id/txt_birthdayDate"
-        app:layout_constraintStart_toEndOf="@+id/txt_birthdayDate"
-        app:layout_constraintTop_toBottomOf="@+id/rg_gender" />
 
     <Spinner
         android:id="@+id/spinner_schoolGrade"
         android:layout_width="275dp"
         android:layout_height="27dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="@+id/input_birthDate"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_showDatapicker"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/txt_birthdayDate"
         app:layout_constraintTop_toBottomOf="@+id/txt_birthdayDate" />
 
@@ -145,6 +129,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.88"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_showDatapicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Cambiar"
+        android:onClick="clickDataPicker"
+        app:layout_constraintEnd_toEndOf="@+id/rg_gender"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/txt_birthdayDate"
+        app:layout_constraintTop_toBottomOf="@+id/rg_gender" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
