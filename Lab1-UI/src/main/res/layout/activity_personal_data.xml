@@ -64,14 +64,16 @@
 
     <TextView
         android:id="@+id/txt_gender"
-        android:layout_width="92dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        style="@style/padding_icons"
+        android:layout_width="86dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
         android:drawableStart="@drawable/ic_gender"
+        android:gravity="center"
         android:text="@string/sexo"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/txt_lastnames"
-        app:layout_constraintTop_toBottomOf="@+id/txt_lastnames" />
+        app:layout_constraintTop_toTopOf="@+id/rg_gender" />
 
     <RadioGroup
         android:id="@+id/rg_gender"
@@ -79,6 +81,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
+        app:layout_constraintLeft_toRightOf="@+id/txt_gender"
         app:layout_constraintEnd_toEndOf="@+id/txt_lastnames"
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toEndOf="@+id/txt_gender"
@@ -94,12 +97,14 @@
             android:id="@+id/rb_women"
             android:layout_width="97dp"
             android:layout_height="wrap_content"
+            android:padding="5dp"
             android:text="@string/mujer" />
 
     </RadioGroup>
 
 
     <TextView
+        style="@style/padding_icons"
         android:id="@+id/txt_birthdayDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -136,13 +141,24 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:text="Cambiar"
         android:onClick="clickDataPicker"
+        android:text="Cambiar"
         app:layout_constraintEnd_toEndOf="@+id/rg_gender"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/txt_birthdayDate"
         app:layout_constraintTop_toBottomOf="@+id/rg_gender" />
 
+    <ImageView
+
+        android:id="@+id/imageView"
+        android:layout_width="35dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toStartOf="@+id/spinner_schoolGrade"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txt_birthdayDate"
+        app:layout_constraintTop_toBottomOf="@+id/txt_birthdayDate"
+        app:srcCompat="@drawable/ic_school" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
