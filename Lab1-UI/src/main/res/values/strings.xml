@@ -1,6 +1,8 @@
 <resources>
 
-    <!-- InfoPersonal Labels -->
+    <string name="requerido">* Requerido</string>
+
+    <!-- PersonalData Labels -->
     <string name="app_name">Labs20211-Gr03</string>
     <string name="informacion_personal">Información Personal</string>
     <string name="nombres">Nombres</string>
@@ -18,5 +20,10 @@
         <item>Universitaria</item>
         <item>Otro</item>
     </string-array>
+
+    <!-- ContactData Labels -->
+    <string name="informacion_contacto">Información de Contacto</string>
+    <string name="telefono">Telefono</string>
+    <string name="correo">Correo</string>
 
 </resources>

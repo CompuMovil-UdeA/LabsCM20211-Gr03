@@ -39,10 +39,7 @@
             style="@style/text_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            tools:layout_editor_absoluteX="32dp"
-            tools:layout_editor_absoluteY="124dp" />
-
+            android:background="@color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -89,23 +86,23 @@
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
-        app:layout_constraintLeft_toRightOf="@+id/txt_gender"
         app:layout_constraintEnd_toEndOf="@+id/txt_lastnames"
         app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintLeft_toRightOf="@+id/txt_gender"
         app:layout_constraintStart_toEndOf="@+id/txt_gender"
         app:layout_constraintTop_toBottomOf="@+id/txt_lastnames">
 
         <RadioButton
-            style="@style/text_form"
             android:id="@+id/rb_man"
+            style="@style/text_form"
             android:layout_width="95dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/hombre" />
 
         <RadioButton
-            style="@style/text_form"
             android:id="@+id/rb_women"
+            style="@style/text_form"
             android:layout_width="97dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -168,8 +165,8 @@
         app:layout_constraintTop_toBottomOf="@+id/txt_birthdayDate" />
 
     <Button
-        style="@style/button_style"
         android:id="@+id/btn_next_infoContact"
+        style="@style/button_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
