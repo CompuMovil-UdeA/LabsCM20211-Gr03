@@ -25,5 +25,7 @@
     <string name="informacion_contacto">Información de Contacto</string>
     <string name="telefono">Telefono</string>
     <string name="correo">Correo</string>
+    <string name="pais">Pais</string>
+    <string name="seleccione">Seleccione</string>
 
 </resources>

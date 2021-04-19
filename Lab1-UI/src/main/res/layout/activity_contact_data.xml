@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ContactDataActivity" >
+    tools:context=".ContactDataActivity">
 
     <TextView
         android:id="@+id/txt_contactInfo"
@@ -69,6 +69,26 @@
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/menu_country"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/pais"
+        app:layout_constraintEnd_toEndOf="@+id/txt_contactInfo"
+        app:layout_constraintStart_toStartOf="@+id/txt_contactInfo"
+        app:layout_constraintTop_toBottomOf="@+id/txt_email">
+
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/seleccione"
+            android:inputType="none" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
