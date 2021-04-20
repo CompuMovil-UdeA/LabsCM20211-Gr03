@@ -85,10 +85,20 @@
         app:layout_constraintTop_toBottomOf="@+id/txt_email">
 
         <AutoCompleteTextView
+            android:id="@+id/item_seleccione"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/seleccione"
+            android:text="@string/seleccione"
             android:inputType="none" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <Spinner
+        android:id="@+id/spinner_country"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/txt_contactInfo"
+        app:layout_constraintStart_toStartOf="@+id/txt_contactInfo"
+        app:layout_constraintTop_toBottomOf="@+id/menu_country" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
