@@ -1,13 +1,10 @@
 <resources>
-
-    <string name="requerido">* Requerido</string>
-
     <!-- PersonalData Labels -->
     <string name="app_name">Labs20211-Gr03</string>
     <string name="informacion_personal">Información Personal</string>
-    <string name="nombres">Nombres</string>
+    <string name="nombres">Nombre</string>
     <string name="apellidos">Apellidos</string>
-    <string name="sexo">Sexo:</string>
+    <string name="sexo">Sexo</string>
     <string name="hombre">Hombre</string>
     <string name="mujer">Mujer</string>
     <string name="fecha_de_nacimiento">Fecha de Nacimiento:</string>
@@ -30,7 +27,9 @@
     <string name="ciudad">Ciudad</string>
     <string name="seleccione">Seleccione</string>
     <string name="direccion">Direccion</string>
+    <string name="enviar_btn">Enviar</string>
 
-    <!-- Mensaje -->
+    <!-- Otros -->
     <string name="no_encontrado">No encontrado</string>
+    <string name="requerido">* Requerido</string>
 </resources>

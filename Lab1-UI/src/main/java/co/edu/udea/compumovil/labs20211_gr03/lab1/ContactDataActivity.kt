@@ -26,10 +26,13 @@ class ContactDataActivity : AppCompatActivity(){
     private lateinit var paises_items: AutoCompleteTextView
     private lateinit var regiones_items: AutoCompleteTextView
     private lateinit var ciudades_items: AutoCompleteTextView
-    private lateinit var paises_spinner: Spinner
+    //private lateinit var paises_spinner: Spinner
     private lateinit var paises: List<Country>
     private lateinit var regiones: List<Region>
     private lateinit var ciudades: List<City>
+    private lateinit var pais_seleccionado: Country
+    private lateinit var region_seleccionado: Region
+    private lateinit var ciudad_seleccionado: City
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,7 +45,7 @@ class ContactDataActivity : AppCompatActivity(){
         paises_items = findViewById(R.id.items_country)
         regiones_items = findViewById(R.id.items_region)
         ciudades_items = findViewById(R.id.items_city)
-        paises_spinner = findViewById(R.id.spinner_country)
+        //paises_spinner = findViewById(R.id.spinner_country)
 
         // Deshabilitamos los dropdown
         pais_menu.isEnabled = false
@@ -57,7 +60,7 @@ class ContactDataActivity : AppCompatActivity(){
     private fun llenarSpinnerPaises(data: List<Country>) {
         paises_items.setText(R.string.seleccione)
         var adapterTest = ArrayAdapter(this,android.R.layout.simple_list_item_1,data)
-        paises_spinner.adapter = adapterTest
+        //paises_spinner.adapter = adapterTest
         paises_items.setAdapter(adapterTest)
         pais_menu.isEnabled = true
 

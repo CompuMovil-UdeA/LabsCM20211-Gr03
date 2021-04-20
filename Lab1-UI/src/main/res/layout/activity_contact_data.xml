@@ -11,8 +11,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteY="25dp">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/txt_contactInfo"
@@ -51,8 +50,9 @@
                 android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:digits="1234567890"
-                android:inputType="phone"
-                android:imeActionLabel="@string/siguiente_btn"/>
+                android:imeActionLabel="@string/siguiente_btn"
+                android:imeOptions="actionNext"
+                android:inputType="phone" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -77,8 +77,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:inputType="textEmailAddress"
-                android:imeActionLabel="@string/siguiente_btn"/>
+                android:imeActionLabel="@string/siguiente_btn"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -98,11 +99,12 @@
                 android:id="@+id/items_country"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
                 android:inputType="none"
                 android:text="@string/seleccione" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Spinner
+        <!-- <Spinner
             android:id="@+id/spinner_country"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -111,7 +113,7 @@
             android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="@+id/txt_contactInfo"
             app:layout_constraintStart_toStartOf="@+id/txt_contactInfo"
-            app:layout_constraintTop_toBottomOf="@+id/menu_country" />
+            app:layout_constraintTop_toBottomOf="@+id/menu_country" /> -->
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/menu_region"
@@ -125,12 +127,13 @@
             android:hint="@string/region"
             app:layout_constraintEnd_toEndOf="@+id/txt_contactInfo"
             app:layout_constraintStart_toStartOf="@+id/txt_contactInfo"
-            app:layout_constraintTop_toBottomOf="@+id/spinner_country">
+            app:layout_constraintTop_toBottomOf="@+id/menu_country">
 
             <AutoCompleteTextView
                 android:id="@+id/items_region"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
                 android:inputType="none"
                 android:text="@string/seleccione" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -153,6 +156,7 @@
                 android:id="@+id/items_city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
                 android:inputType="none"
                 android:text="@string/seleccione" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -178,9 +182,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:inputType="textPostalAddress"
-                android:imeActionLabel="@string/siguiente_btn"/>
+                android:imeActionLabel="@string/siguiente_btn"
+                android:imeOptions="actionNext"
+                android:inputType="textPostalAddress" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_next_infoContact"
+            style="@style/button_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/enviar_btn"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/txt_contactInfo"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintStart_toStartOf="@+id/txt_contactInfo"
+            app:layout_constraintTop_toBottomOf="@id/txt_address" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

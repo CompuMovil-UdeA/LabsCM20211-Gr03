@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- PersonalData Labels -->
+    <string name="app_name">Labs20211-Gr03</string>
+    <string name="informacion_personal">Personal information</string>
+    <string name="nombres">First Name</string>
+    <string name="apellidos">Last Name</string>
+    <string name="sexo">Gender</string>
+    <string name="hombre">Male</string>
+    <string name="mujer">Female</string>
+    <string name="fecha_de_nacimiento">Birth Date</string>
+    <string name="dd_mm_yyyy">dd-mm-yyyy</string>
+    <string name="siguiente_btn">Next</string>
+    <string-array name="array_gradoEscolaridad">
+        <item>Academic Degrees</item>
+        <item>Elementary School</item>
+        <item>High School</item>
+        <item>College</item>
+        <item>Other</item>
+    </string-array>
+
+    <!-- ContactData Labels -->
+    <string name="informacion_contacto">Contact Information</string>
+    <string name="telefono">Phone</string>
+    <string name="correo">Email</string>
+    <string name="pais">Country</string>
+    <string name="region">Region</string>
+    <string name="ciudad">City</string>
+    <string name="seleccione">Select</string>
+    <string name="direccion">Address</string>
+    <string name="enviar_btn">Send</string>
+
+    <!-- Otros -->
+    <string name="no_encontrado">Not found</string>
+    <string name="requerido">* Required</string>
+</resources>
