@@ -31,4 +31,6 @@
     <string name="seleccione">Seleccione</string>
     <string name="direccion">Direccion</string>
 
+    <!-- Mensaje -->
+    <string name="no_encontrado">No encontrado</string>
 </resources>
