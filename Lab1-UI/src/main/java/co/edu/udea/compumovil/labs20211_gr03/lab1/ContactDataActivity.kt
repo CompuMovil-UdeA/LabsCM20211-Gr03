@@ -18,8 +18,6 @@ class ContactDataActivity : AppCompatActivity() {
     private lateinit var paises_spinner: Spinner
     private lateinit var paises: List<Country>
 
-    val list = listOf("kotlin","java","c#","js","py","html","css","php","node js ","kotlin","java","c#","js","py","html","css","php","node js ","kotlin","java","c#","js","py","html","css","php","node js ","kotlin","java","c#","js","py","html","css","php","node js ","kotlin","java","c#","js","py","html","css","php","node js ","kotlin","java","c#","js","py","html","css","php","node js ","kotlin","java","c#","js","py","html","css","php","node js ","kotlin","java","c#","js","py","html","css","php","node js ")
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_contact_data)

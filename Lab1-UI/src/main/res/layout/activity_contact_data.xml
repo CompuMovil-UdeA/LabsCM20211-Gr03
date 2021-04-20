@@ -51,7 +51,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:hint="@string/correo"
         app:helperText="@string/requerido"
@@ -71,34 +71,15 @@
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/menu_country"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:hint="@string/pais"
-        app:layout_constraintEnd_toEndOf="@+id/txt_contactInfo"
-        app:layout_constraintStart_toStartOf="@+id/txt_contactInfo"
-        app:layout_constraintTop_toBottomOf="@+id/txt_email">
-
-        <AutoCompleteTextView
-            android:id="@+id/item_seleccione"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/seleccione"
-            android:inputType="none" />
-    </com.google.android.material.textfield.TextInputLayout>
-
     <Spinner
         android:id="@+id/spinner_country"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="@+id/txt_contactInfo"
         app:layout_constraintStart_toStartOf="@+id/txt_contactInfo"
-        app:layout_constraintTop_toBottomOf="@+id/menu_country" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_email" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

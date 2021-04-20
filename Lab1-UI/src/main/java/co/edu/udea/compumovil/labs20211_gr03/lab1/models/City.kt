@@ -6,4 +6,6 @@ data class City(
     var country:String,
     var latitude: String,
     var longitude: String
-)
+){
+    override fun toString(): String = city
+}
