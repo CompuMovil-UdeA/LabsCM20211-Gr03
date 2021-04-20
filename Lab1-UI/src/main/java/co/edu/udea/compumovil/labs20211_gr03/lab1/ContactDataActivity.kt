@@ -16,6 +16,7 @@ class ContactDataActivity : AppCompatActivity() {
     private lateinit var retrofit: Retrofit
     private lateinit var service: CountryAPIService
     private lateinit var paises_spinner: Spinner
+    private lateinit var paises_items: AutoCompleteTextView
     private lateinit var paises: List<Country>
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +32,9 @@ class ContactDataActivity : AppCompatActivity() {
         var adapterTest = ArrayAdapter(this,android.R.layout.simple_list_item_1,data)
         paises_spinner = findViewById(R.id.spinner_country)
         paises_spinner.adapter = adapterTest
+
+        paises_items = findViewById(R.id.items_country)
+        paises_items.setAdapter(adapterTest)
     }
 
     private fun getCountries() {

@@ -26,6 +26,9 @@
     <string name="telefono">Telefono</string>
     <string name="correo">Correo</string>
     <string name="pais">Pais</string>
+    <string name="region">Region</string>
+    <string name="ciudad">Ciudad</string>
     <string name="seleccione">Seleccione</string>
+    <string name="direccion">Direccion</string>
 
 </resources>
