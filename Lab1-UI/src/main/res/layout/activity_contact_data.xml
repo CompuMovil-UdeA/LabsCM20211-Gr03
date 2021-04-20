@@ -51,7 +51,8 @@
                 android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:digits="1234567890"
-                android:inputType="phone" />
+                android:inputType="phone"
+                android:imeActionLabel="@string/siguiente_btn"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -76,7 +77,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:imeActionLabel="@string/siguiente_btn"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -176,7 +178,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:inputType="textEmailAddress" />
+                android:inputType="textPostalAddress"
+                android:imeActionLabel="@string/siguiente_btn"/>
         </com.google.android.material.textfield.TextInputLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
