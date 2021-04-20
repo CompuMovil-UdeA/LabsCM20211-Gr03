@@ -9,4 +9,7 @@ import retrofit2.http.Query
 interface CountryAPIService {
     @GET("country/all/")
     fun getCountries(@Query("key") key: String): Call<List<Country>>
+
+    @GET("region/{country_code}/all/")
+    fun getRegions(@Path("country_code") country_code: String, @Query("key") key: String): Call<List<Region>>
 }
