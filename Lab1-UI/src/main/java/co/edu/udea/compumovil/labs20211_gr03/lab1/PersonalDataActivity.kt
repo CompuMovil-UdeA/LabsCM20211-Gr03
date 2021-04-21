@@ -46,8 +46,17 @@ class PersonalDataActivity : AppCompatActivity() {
 
 
         btn_next.setOnClickListener { v ->
-            val intent = Intent(this, ContactDataActivity::class.java)
-            startActivity(intent)
+            validarNombre()
+            validarApellido()
+
+            // No hay error
+            if(txt_names.error == null && txt_lastnames.error == null ){
+                // Loggee
+
+
+                val intent = Intent(this, ContactDataActivity::class.java)
+                startActivity(intent)
+            }
         }
 
         validarCampos()
@@ -55,23 +64,38 @@ class PersonalDataActivity : AppCompatActivity() {
 
     private fun validarCampos() {
         input_names.setOnEditorActionListener() { v, actionId, event ->
-            if(actionId == EditorInfo.IME_ACTION_NEXT && input_names.text.toString() == "") {
-                txt_names.error = getString(R.string.msj_error_nombre)
+            if(actionId == EditorInfo.IME_ACTION_NEXT) {
+                validarNombre()
                 true
             }else {
-                txt_names.error = null
                 false
             }
         }
 
         input_lastnames.setOnEditorActionListener() { v, actionId, event ->
-            if(actionId == EditorInfo.IME_ACTION_NEXT && input_lastnames.text.toString() == "") {
-                txt_lastnames.error = getString(R.string.msj_error_apellido)
+            if(actionId == EditorInfo.IME_ACTION_NEXT) {
+                validarApellido()
                 true
             }else {
-                txt_lastnames.error = null
+
                 false
             }
+        }
+    }
+
+    private fun validarNombre() {
+        if(input_names.text.toString() == ""){
+            txt_names.error = getString(R.string.msj_error_nombre)
+        }else{
+            txt_names.error = null
+        }
+    }
+
+    private fun validarApellido() {
+        if(input_lastnames.text.toString() == ""){
+            txt_lastnames.error = getString(R.string.msj_error_apellido)
+        }else{
+            txt_lastnames.error = null
         }
     }
 
