@@ -36,7 +36,6 @@ class ContactDataActivity : AppCompatActivity(){
     private lateinit var input_email: TextInputEditText
     private lateinit var input_address: TextInputEditText
     private lateinit var btn_enviar: Button
-    //private lateinit var paises_spinner: Spinner
     private lateinit var paises: List<Country>
     private lateinit var regiones: List<Region>
     private lateinit var ciudades: List<City>
@@ -63,8 +62,6 @@ class ContactDataActivity : AppCompatActivity(){
         txt_email = findViewById(R.id.txt_email)
         txt_address = findViewById(R.id.txt_address)
         btn_enviar = findViewById(R.id.btn_send)
-
-        //paises_spinner = findViewById(R.id.spinner_country)
 
         // Deshabilitamos los dropdown
         pais_menu.isEnabled = false

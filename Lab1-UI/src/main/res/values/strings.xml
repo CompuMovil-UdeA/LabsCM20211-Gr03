@@ -38,4 +38,6 @@
     <string name="msj_error_telefono">Escriba telefono valido</string>
     <string name="msj_error_email">Escriba correo valido</string>
     <string name="msj_error_pais">Seleccione un pais</string>
+    <string name="msj_error_nombre">Escriba nombre valido</string>
+    <string name="msj_error_apellido">Escriba apellidos validos</string>
 </resources>

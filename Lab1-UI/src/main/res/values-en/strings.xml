@@ -39,4 +39,6 @@
     <string name="msj_error_telefono">Enter a valid phone number</string>
     <string name="msj_error_email">Enter a valid email</string>
     <string name="msj_error_pais">Select a country</string>
+    <string name="msj_error_nombre">Enter a valid name</string>
+    <string name="msj_error_apellido">Entar a valid last name</string>
 </resources>
