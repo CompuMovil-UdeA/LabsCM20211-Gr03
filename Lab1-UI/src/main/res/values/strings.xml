@@ -11,6 +11,8 @@
     <string name="fecha_de_nacimiento">Fecha de Nacimiento:</string>
     <string name="dd_mm_yyyy">dd-mm-yyyy</string>
     <string name="siguiente_btn">Siguiente</string>
+    <string name="cambiar">Cambiar</string>
+    <string name="todo">TODO</string>
     <string-array name="array_gradoEscolaridad">
         <item>Grado de escolaridad</item>
         <item>Primaria</item>
