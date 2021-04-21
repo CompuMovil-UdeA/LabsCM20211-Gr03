@@ -4,32 +4,30 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.util.Patterns
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.EditorInfo
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.Spinner
-import android.widget.Toast
+import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import java.util.*
-import java.util.regex.Pattern
 
 
 class PersonalDataActivity : AppCompatActivity() {
+    private lateinit var txt_title: TextView
     private lateinit var txt_names: TextInputLayout
     private lateinit var input_names: TextInputEditText
     private lateinit var txt_lastnames: TextInputLayout
     private lateinit var input_lastnames: TextInputEditText
     private lateinit var btn_next: Button
+    private lateinit var message_logcat: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_personal_data)
-
+        txt_title = findViewById<TextView>(R.id.txt_personalInfo)
         txt_names = findViewById(R.id.txt_names)
         input_names = findViewById(R.id.input_names)
         txt_lastnames = findViewById(R.id.txt_lastnames)
@@ -46,6 +44,7 @@ class PersonalDataActivity : AppCompatActivity() {
 
 
         btn_next.setOnClickListener { v ->
+            mostrarValoresEnConsola()
             val intent = Intent(this, ContactDataActivity::class.java)
             startActivity(intent)
         }
@@ -88,5 +87,15 @@ class PersonalDataActivity : AppCompatActivity() {
             Toast.makeText(this, """$dayOfMonth - ${monthOfYear + 1} - $year""", Toast.LENGTH_LONG).show()
         }, year, month, day)
         dpd.show()
+    }
+
+    fun mostrarValoresEnConsola(){
+        var titulo = txt_title.text.toString()
+        var nombres= input_names.text.toString()
+        var apellidos = input_lastnames.text.toString()
+
+        message_logcat =  titulo.plus(" ").plus(nombres).plus(" ").plus(apellidos)
+        Log.i("seguimiento", message_logcat)
+
     }
 }
