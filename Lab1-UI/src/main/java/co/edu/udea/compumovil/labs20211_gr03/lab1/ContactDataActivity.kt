@@ -4,16 +4,18 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.inputmethod.EditorInfo
 import android.widget.*
 import co.edu.udea.compumovil.labs20211_gr03.lab1.models.City
 import co.edu.udea.compumovil.labs20211_gr03.lab1.models.Country
 import co.edu.udea.compumovil.labs20211_gr03.lab1.models.Region
+import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
-
+import java.util.regex.Pattern
 
 
 class ContactDataActivity : AppCompatActivity(){
@@ -26,6 +28,10 @@ class ContactDataActivity : AppCompatActivity(){
     private lateinit var paises_items: AutoCompleteTextView
     private lateinit var regiones_items: AutoCompleteTextView
     private lateinit var ciudades_items: AutoCompleteTextView
+    private lateinit var input_phone: TextInputEditText
+    private lateinit var input_email: TextInputEditText
+    private lateinit var input_address: TextInputEditText
+    private lateinit var btn_enviar: Button
     //private lateinit var paises_spinner: Spinner
     private lateinit var paises: List<Country>
     private lateinit var regiones: List<Region>
@@ -33,7 +39,6 @@ class ContactDataActivity : AppCompatActivity(){
     private lateinit var pais_seleccionado: Country
     private lateinit var region_seleccionado: Region
     private lateinit var ciudad_seleccionado: City
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +50,9 @@ class ContactDataActivity : AppCompatActivity(){
         paises_items = findViewById(R.id.items_country)
         regiones_items = findViewById(R.id.items_region)
         ciudades_items = findViewById(R.id.items_city)
+        input_phone =  findViewById(R.id.input_phone)
+        input_email =  findViewById(R.id.input_email)
+        input_address =  findViewById(R.id.input_address)
         //paises_spinner = findViewById(R.id.spinner_country)
 
         // Deshabilitamos los dropdown
@@ -52,9 +60,29 @@ class ContactDataActivity : AppCompatActivity(){
         region_menu.isEnabled = false
         ciudad_menu.isEnabled = false
 
+        // Imprime Dummy
+        //btn_enviar.setOnClickListener()
+        validarCampos()
+
         retrofit = RestEngine.getRestEngine()
         service = retrofit.create<CountryAPIService>(CountryAPIService::class.java)
         getCountries()
+    }
+
+    private fun validarCampos() {
+        // Expresion regular para soport a aquellos dispositivos con API < 8
+        //val EMAIL_ADDRESS = Pattern.compile(("[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" + "\\@" +
+                //"[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" + "(" + "\\." + "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" + ")+"))
+
+
+       /* input_phone.setOnEditorActionListener() { v, actionId, event ->
+
+            when(actionId){
+            EditorInfo.IME_ACTION_NEXT -> {  Toast.makeText(this, "HOLA", Toast.LENGTH_LONG).show(); true }
+            else -> false
+            }
+
+        } */
     }
 
     private fun llenarSpinnerPaises(data: List<Country>) {
@@ -65,10 +93,10 @@ class ContactDataActivity : AppCompatActivity(){
         pais_menu.isEnabled = true
 
         paises_items.setOnItemClickListener { parent, view, position, id ->
-            val pais: Country = parent.getItemAtPosition(position) as Country
-            Toast.makeText(this, pais.code, Toast.LENGTH_LONG).show()
+            pais_seleccionado = parent.getItemAtPosition(position) as Country
+            Toast.makeText(this, pais_seleccionado.code, Toast.LENGTH_LONG).show()
 
-            getRegions(pais.code)
+            getRegions(pais_seleccionado.code)
         }
     }
 
@@ -83,10 +111,10 @@ class ContactDataActivity : AppCompatActivity(){
             region_menu.isEnabled = true
 
             regiones_items.setOnItemClickListener { parent, view, position, id ->
-                val region: Region = parent.getItemAtPosition(position) as Region
-                Toast.makeText(this, region.region, Toast.LENGTH_LONG).show()
+                region_seleccionado = parent.getItemAtPosition(position) as Region
+                Toast.makeText(this, region_seleccionado.region, Toast.LENGTH_LONG).show()
 
-                getCities(region.country, region.region)
+                getCities(region_seleccionado.country, region_seleccionado.region)
             }
         }
     }
@@ -100,6 +128,11 @@ class ContactDataActivity : AppCompatActivity(){
             var adapterTest = ArrayAdapter(this,android.R.layout.simple_list_item_1,data)
             ciudades_items.setAdapter(adapterTest)
             ciudad_menu.isEnabled = true
+
+            ciudades_items.setOnItemClickListener { parent, view, position, id ->
+                ciudad_seleccionado = parent.getItemAtPosition(position) as City
+                Toast.makeText(this, ciudad_seleccionado.city, Toast.LENGTH_LONG).show()
+            }
         }
     }
 
