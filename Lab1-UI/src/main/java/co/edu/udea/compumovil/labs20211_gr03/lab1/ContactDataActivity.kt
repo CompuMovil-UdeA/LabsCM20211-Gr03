@@ -156,6 +156,11 @@ class ContactDataActivity : AppCompatActivity(){
 
         paises_items.setOnItemClickListener { parent, view, position, id ->
             pais_seleccionado = parent.getItemAtPosition(position) as Country
+
+            if(paises_items.text.toString() != getString(R.string.seleccione)){
+                pais_menu.error = null
+            }
+
             getRegions(pais_seleccionado.code)
         }
     }
