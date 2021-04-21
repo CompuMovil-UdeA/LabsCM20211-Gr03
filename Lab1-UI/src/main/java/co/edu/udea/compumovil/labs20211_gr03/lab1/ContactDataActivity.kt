@@ -70,11 +70,15 @@ class ContactDataActivity : AppCompatActivity(){
 
 
         btn_enviar.setOnClickListener { v ->
-            Toast.makeText(
-                this,
-                R.string.mensaje_enviar,
-                Toast.LENGTH_LONG
-            ).show()
+            validarTelefono()
+            validarEmail()
+            validarPais()
+
+            // No hay error
+            if(txt_phone.error == null && txt_email.error == null && pais_menu.error == null){
+                // Loggee
+                Toast.makeText(this, R.string.mensaje_enviar, Toast.LENGTH_LONG).show()
+            }
         }
 
 
@@ -85,39 +89,61 @@ class ContactDataActivity : AppCompatActivity(){
         getCountries()
     }
 
+    // Se validan los campos cuando se presiona el boton azul del keyboard
     private fun validarCampos() {
 
         input_phone.setOnEditorActionListener() { v, actionId, event ->
-            if(actionId == EditorInfo.IME_ACTION_NEXT && input_phone.text.toString() == "") {
-                txt_phone.error = getString(R.string.msj_error_telefono)
+            if(actionId == EditorInfo.IME_ACTION_NEXT) {
+                validarTelefono()
                 true
             }else {
-                txt_phone.error = null
                 false
             }
         }
 
         input_email.setOnEditorActionListener() { v, actionId, event ->
-            var patron: Pattern = Patterns.EMAIL_ADDRESS
-            var email: String = input_email.text.toString()
-
-            if(actionId == EditorInfo.IME_ACTION_NEXT && (email == "" || !patron.matcher(email).matches())){
-                txt_email.error = getString(R.string.msj_error_email)
+            if(actionId == EditorInfo.IME_ACTION_NEXT){
+                validarEmail()
                 true
             }else {
-                txt_email.error = null
                 false
             }
         }
 
         paises_items.setOnEditorActionListener() { v, actionId, event ->
-            if(actionId == EditorInfo.IME_ACTION_UNSPECIFIED && (paises_items.text.toString() == getString(R.string.seleccione))){
-                pais_menu.error = getString(R.string.msj_error_pais)
+            if(actionId == EditorInfo.IME_ACTION_UNSPECIFIED){
+                validarPais()
                 true
             }else {
-                pais_menu.error = null
                 false
             }
+        }
+    }
+
+    private fun validarTelefono() {
+        if(input_phone.text.toString() == ""){
+            txt_phone.error = getString(R.string.msj_error_telefono)
+        }else{
+            txt_phone.error = null
+        }
+    }
+
+    private fun validarEmail(){
+        var patron: Pattern = Patterns.EMAIL_ADDRESS
+        var email: String = input_email.text.toString()
+
+        if(email == "" || !patron.matcher(email).matches()){
+            txt_email.error = getString(R.string.msj_error_email)
+        }else {
+            txt_email.error = null
+        }
+    }
+
+    private fun validarPais(){
+        if(paises_items.text.toString() == getString(R.string.seleccione)){
+            pais_menu.error = getString(R.string.msj_error_pais)
+        }else{
+            pais_menu.error = null
         }
     }
 
