@@ -11,6 +11,8 @@
     <string name="fecha_de_nacimiento">Birth Date</string>
     <string name="dd_mm_yyyy">dd-mm-yyyy</string>
     <string name="siguiente_btn">Next</string>
+    <string name="cambiar">Change</string>
+    <string name="todo">ALL</string>
     <string-array name="array_gradoEscolaridad">
         <item>Academic Degrees</item>
         <item>Elementary School</item>
@@ -29,8 +31,12 @@
     <string name="seleccione">Select</string>
     <string name="direccion">Address</string>
     <string name="enviar_btn">Send</string>
+    <string name="mensaje_enviar">Thanks for participating</string>
 
     <!-- Otros -->
     <string name="no_encontrado">Not found</string>
     <string name="requerido">* Required</string>
+    <string name="msj_error_telefono">Enter a valid phone number</string>
+    <string name="msj_error_email">Enter a valid email</string>
+    <string name="msj_error_pais">Select a country</string>
 </resources>

@@ -3,6 +3,7 @@ package co.edu.udea.compumovil.labs20211_gr03.lab1
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.util.Patterns
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.*
@@ -25,6 +26,9 @@ class ContactDataActivity : AppCompatActivity(){
     private lateinit var pais_menu: TextInputLayout
     private lateinit var region_menu: TextInputLayout
     private lateinit var ciudad_menu: TextInputLayout
+    private lateinit var txt_phone: TextInputLayout
+    private lateinit var txt_email: TextInputLayout
+    private lateinit var txt_address: TextInputLayout
     private lateinit var paises_items: AutoCompleteTextView
     private lateinit var regiones_items: AutoCompleteTextView
     private lateinit var ciudades_items: AutoCompleteTextView
@@ -40,6 +44,8 @@ class ContactDataActivity : AppCompatActivity(){
     private lateinit var region_seleccionado: Region
     private lateinit var ciudad_seleccionado: City
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_contact_data)
@@ -53,6 +59,11 @@ class ContactDataActivity : AppCompatActivity(){
         input_phone =  findViewById(R.id.input_phone)
         input_email =  findViewById(R.id.input_email)
         input_address =  findViewById(R.id.input_address)
+        txt_phone = findViewById(R.id.txt_phone)
+        txt_email = findViewById(R.id.txt_email)
+        txt_address = findViewById(R.id.txt_address)
+        btn_enviar = findViewById(R.id.btn_send)
+
         //paises_spinner = findViewById(R.id.spinner_country)
 
         // Deshabilitamos los dropdown
@@ -60,8 +71,16 @@ class ContactDataActivity : AppCompatActivity(){
         region_menu.isEnabled = false
         ciudad_menu.isEnabled = false
 
-        // Imprime Dummy
-        //btn_enviar.setOnClickListener()
+
+        btn_enviar.setOnClickListener { v ->
+            Toast.makeText(
+                this,
+                R.string.mensaje_enviar,
+                Toast.LENGTH_LONG
+            ).show()
+        }
+
+
         validarCampos()
 
         retrofit = RestEngine.getRestEngine()
@@ -70,19 +89,39 @@ class ContactDataActivity : AppCompatActivity(){
     }
 
     private fun validarCampos() {
-        // Expresion regular para soport a aquellos dispositivos con API < 8
-        //val EMAIL_ADDRESS = Pattern.compile(("[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" + "\\@" +
-                //"[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" + "(" + "\\." + "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" + ")+"))
 
-
-       /* input_phone.setOnEditorActionListener() { v, actionId, event ->
-
-            when(actionId){
-            EditorInfo.IME_ACTION_NEXT -> {  Toast.makeText(this, "HOLA", Toast.LENGTH_LONG).show(); true }
-            else -> false
+        input_phone.setOnEditorActionListener() { v, actionId, event ->
+            if(actionId == EditorInfo.IME_ACTION_NEXT && input_phone.text.toString() == "") {
+                txt_phone.error = getString(R.string.msj_error_telefono)
+                true
+            }else {
+                txt_phone.error = null
+                false
             }
+        }
 
-        } */
+        input_email.setOnEditorActionListener() { v, actionId, event ->
+            var patron: Pattern = Patterns.EMAIL_ADDRESS
+            var email: String = input_email.text.toString()
+
+            if(actionId == EditorInfo.IME_ACTION_NEXT && (email == "" || !patron.matcher(email).matches())){
+                txt_email.error = getString(R.string.msj_error_email)
+                true
+            }else {
+                txt_email.error = null
+                false
+            }
+        }
+
+        paises_items.setOnEditorActionListener() { v, actionId, event ->
+            if(actionId == EditorInfo.IME_ACTION_UNSPECIFIED && (paises_items.text.toString() == getString(R.string.seleccione))){
+                pais_menu.error = getString(R.string.msj_error_pais)
+                true
+            }else {
+                pais_menu.error = null
+                false
+            }
+        }
     }
 
     private fun llenarSpinnerPaises(data: List<Country>) {
@@ -94,8 +133,6 @@ class ContactDataActivity : AppCompatActivity(){
 
         paises_items.setOnItemClickListener { parent, view, position, id ->
             pais_seleccionado = parent.getItemAtPosition(position) as Country
-            Toast.makeText(this, pais_seleccionado.code, Toast.LENGTH_LONG).show()
-
             getRegions(pais_seleccionado.code)
         }
     }
@@ -112,8 +149,6 @@ class ContactDataActivity : AppCompatActivity(){
 
             regiones_items.setOnItemClickListener { parent, view, position, id ->
                 region_seleccionado = parent.getItemAtPosition(position) as Region
-                Toast.makeText(this, region_seleccionado.region, Toast.LENGTH_LONG).show()
-
                 getCities(region_seleccionado.country, region_seleccionado.region)
             }
         }
@@ -131,7 +166,6 @@ class ContactDataActivity : AppCompatActivity(){
 
             ciudades_items.setOnItemClickListener { parent, view, position, id ->
                 ciudad_seleccionado = parent.getItemAtPosition(position) as City
-                Toast.makeText(this, ciudad_seleccionado.city, Toast.LENGTH_LONG).show()
             }
         }
     }
