@@ -51,7 +51,7 @@
                 android:background="@color/white"
                 android:imeActionLabel="@string/siguiente_btn"
                 android:imeOptions="actionNext"
-                android:inputType="textPersonName"/>
+                android:inputType="textPersonName|textNoSuggestions|textCapSentences"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -78,7 +78,7 @@
                 tools:layout_editor_absoluteY="124dp"
                 android:imeActionLabel="@string/siguiente_btn"
                 android:imeOptions="actionNext"
-                android:inputType="textPersonName"/>
+                android:inputType="textPersonName|textNoSuggestions|textCapSentences"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 

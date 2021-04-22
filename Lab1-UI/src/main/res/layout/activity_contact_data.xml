@@ -184,7 +184,7 @@
                 android:background="@color/white"
                 android:imeActionLabel="@string/siguiente_btn"
                 android:imeOptions="actionNext"
-                android:inputType="textPostalAddress" />
+                android:inputType="textPostalAddress|textNoSuggestions" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
