@@ -4,13 +4,11 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
 import android.view.View
 import android.view.inputmethod.EditorInfo
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.Spinner
-import android.widget.Toast
+import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
@@ -24,7 +22,13 @@ class PersonalDataActivity : AppCompatActivity() {
     private lateinit var input_names: TextInputEditText
     private lateinit var txt_lastnames: TextInputLayout
     private lateinit var input_lastnames: TextInputEditText
+    private lateinit var rb_man: RadioButton
+    private lateinit var rb_women: RadioButton
+    private lateinit var rg_gender: RadioGroup
     private lateinit var btn_next: Button
+    private lateinit var titulo: TextView
+    private lateinit var fecha_nacimiento: String
+    private lateinit var spinner: Spinner
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,11 +39,15 @@ class PersonalDataActivity : AppCompatActivity() {
         txt_lastnames = findViewById(R.id.txt_lastnames)
         input_lastnames = findViewById(R.id.input_lastnames)
         btn_next = findViewById(R.id.btn_next_infoContact)
+        titulo = findViewById(R.id.txt_personalInfo)
+        rb_man = findViewById(R.id.rb_man)
+        rb_women = findViewById(R.id.rb_women)
+        rg_gender = findViewById(R.id.rg_gender)
 
-
+        fecha_nacimiento = ""
 
         //Spinner Grado de Escolaridad
-        val spinner = findViewById<Spinner>(R.id.spinner_schoolGrade)
+        spinner = findViewById<Spinner>(R.id.spinner_schoolGrade)
         var list = resources.getStringArray(R.array.array_gradoEscolaridad)
         val adaptador = ArrayAdapter(this, android.R.layout.simple_spinner_item, list)
         spinner.adapter = adaptador
@@ -51,8 +59,7 @@ class PersonalDataActivity : AppCompatActivity() {
 
             // No hay error
             if(txt_names.error == null && txt_lastnames.error == null ){
-                // Loggee
-
+                loggearInfo()
 
                 val intent = Intent(this, ContactDataActivity::class.java)
                 startActivity(intent)
@@ -109,8 +116,25 @@ class PersonalDataActivity : AppCompatActivity() {
 
         val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
             // Display Selected date in Toast
-            Toast.makeText(this, """$dayOfMonth - ${monthOfYear + 1} - $year""", Toast.LENGTH_LONG).show()
+            fecha_nacimiento = """$dayOfMonth - ${monthOfYear + 1} - $year"""
+            Toast.makeText(this, fecha_nacimiento, Toast.LENGTH_LONG).show()
         }, year, month, day)
         dpd.show()
+    }
+
+     private fun loggearInfo(){
+         val selectedRadioButtonId: Int = rg_gender.checkedRadioButtonId
+         val selectedRadioButton: RadioButton = findViewById(selectedRadioButtonId)
+         val selectedRadioButtonValue: String = selectedRadioButton.text.toString()
+
+         val opcional1 = if (spinner.selectedItem.toString() == getString(R.string.escolaridad)) "" else spinner.selectedItem.toString()
+
+         val info: String =  getString(R.string.nombres) + ": " + input_names.text.toString() + "\n" +
+                getString(R.string.apellidos) + ": " + input_lastnames.text.toString() + "\n" +
+                getString(R.string.sexo) + ": " + selectedRadioButtonValue + "\n" +
+                getString(R.string.fecha_de_nacimiento) + ": " + fecha_nacimiento + "\n" +
+                getString(R.string.escolaridad) + ": " + opcional1 + "\n"
+
+        Log.i(titulo.text.toString(), info)
     }
 }

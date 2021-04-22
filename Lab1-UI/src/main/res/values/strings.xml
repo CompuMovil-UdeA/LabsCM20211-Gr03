@@ -12,6 +12,7 @@
     <string name="siguiente_btn">Siguiente</string>
     <string name="cambiar">Cambiar</string>
     <string name="todo">TODO</string>
+    <string name="escolaridad">Grado de escolaridad</string>
     <string-array name="array_gradoEscolaridad">
         <item>Grado de escolaridad</item>
         <item>Primaria</item>

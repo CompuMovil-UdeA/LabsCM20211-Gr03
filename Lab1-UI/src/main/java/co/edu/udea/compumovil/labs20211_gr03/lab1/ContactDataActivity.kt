@@ -42,6 +42,7 @@ class ContactDataActivity : AppCompatActivity(){
     private lateinit var pais_seleccionado: Country
     private lateinit var region_seleccionado: Region
     private lateinit var ciudad_seleccionado: City
+    private lateinit var titulo: TextView
 
 
 
@@ -62,6 +63,7 @@ class ContactDataActivity : AppCompatActivity(){
         txt_email = findViewById(R.id.txt_email)
         txt_address = findViewById(R.id.txt_address)
         btn_enviar = findViewById(R.id.btn_send)
+        titulo = findViewById(R.id.txt_contactInfo)
 
         // Deshabilitamos los dropdown
         pais_menu.isEnabled = false
@@ -76,7 +78,7 @@ class ContactDataActivity : AppCompatActivity(){
 
             // No hay error
             if(txt_phone.error == null && txt_email.error == null && pais_menu.error == null){
-                // Loggee
+                loggearInfo()
                 Toast.makeText(this, R.string.mensaje_enviar, Toast.LENGTH_LONG).show()
             }
         }
@@ -242,6 +244,20 @@ class ContactDataActivity : AppCompatActivity(){
                 t?.printStackTrace()
             }
         })
+    }
+
+    private fun loggearInfo(){
+        val opcional1 = if (regiones_items.text.toString() == getString(R.string.seleccione)) "" else regiones_items.text.toString()
+        val opcional2 = if (ciudades_items.text.toString() == getString(R.string.seleccione)) "" else ciudades_items.text.toString()
+
+        val info: String =  getString(R.string.telefono) + ": " + input_phone.text.toString() + "\n" +
+                            getString(R.string.correo) + ": " + input_email.text.toString() + "\n" +
+                            getString(R.string.pais) + ": " + paises_items.text.toString() + "\n" +
+                            getString(R.string.region) + ": " + opcional1 + "\n" +
+                            getString(R.string.ciudad) + ": " + opcional2 + "\n" +
+                            getString(R.string.direccion) + ": " + input_address.text.toString() + "\n"
+
+        Log.i(titulo.text.toString(), info)
     }
 
 }
