@@ -15,6 +15,9 @@ interface POIDao {
     @Update
     fun update(request: POI)
 
+
+    // @ToDO getByID
+
     @Query(value = "DELETE from tabla_POI where sitioid = :key")
     fun delete(key:Int)
 
