@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#FF0057"
     tools:context=".registro_usuario">
+
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/txt_bienvenida"
@@ -19,89 +20,37 @@
         android:fontFamily="serif-monospace"
         android:text="@string/bienvenida_registrarse"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="19sp"
         android:textStyle="bold"
 
         />
 
-
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtField_identificacion"
+        android:id="@+id/txtField_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         android:layout_below="@+id/txt_bienvenida"
-        app:startIconDrawable="@drawable/ic_vpn_key_24dp"
-        android:textColorHint="@color/black"
-        app:startIconTint="@color/black"
-        app:endIconTint="@color/black"
-        android:backgroundTint="#20D6DD"
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="casual"
-            android:hint="@string/identificacion_registro"
-            android:textColor="#000000"
-            android:textSize="14dp"
-            android:backgroundTint="#20D6DD"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtField_nombre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtField_identificacion"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="79dp"
         android:layout_marginEnd="20dp"
+        android:textColorHint="@color/white"
+        app:endIconTint="@color/white"
         app:startIconDrawable="@drawable/ic_person"
-        app:startIconTint="@color/black"
-        app:endIconTint="@color/black"
-        android:textColorHint="@color/black"
-        >
+        app:startIconTint="@color/white">
+
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_nombre"
+            android:id="@+id/input_user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#20D6DD"
+            android:textStyle="bold"
             android:fontFamily="casual"
-            android:hint="@string/nombre_registro"
-            android:shadowColor="#070707"
-            android:textColor="@color/black"
-            android:textColorHint="#040404"
-            android:textSize="14sp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtField_apellidos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_below="@+id/txtField_nombre"
-        app:startIconDrawable="@drawable/ic_person"
-        app:startIconTint="@color/black"
-        app:endIconTint="@color/black"
-        android:textColorHint="@color/black"
-        >
-
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_apellidos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="casual"
-            android:hint="@string/apellidos_registro"
-            android:textColor="@color/black"
-            app:startIconTint="@color/black"
-            app:endIconTint="@color/black"
-            android:backgroundTint="#20D6DD"
-            />
+            android:hint="@string/user"
+            android:textColor="@color/white"
+            app:endIconTint="@color/white"
+            app:startIconTint="@color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -110,11 +59,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_below="@+id/txtField_apellidos"
+        android:layout_below="@+id/txtField_user"
         app:startIconDrawable="@drawable/ic_email"
-        app:startIconTint="@color/black"
-        app:endIconTint="@color/black"
-        android:textColorHint="@color/black"
+        app:startIconTint="@color/white"
+        app:endIconTint="@color/white"
+        android:textColorHint="@color/white"
         android:backgroundTint="#20D6DD">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -125,10 +74,11 @@
             android:hint="@string/correo_registro"
             android:inputType="textEmailSubject"
             android:textSize="14sp"
-            app:startIconTint="@color/black"
-            app:endIconTint="@color/black"
+            app:startIconTint="@color/white"
+            app:endIconTint="@color/white"
             android:backgroundTint="#20D6DD"
-            android:textColor="@color/black"/>
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -139,9 +89,9 @@
         android:layout_marginEnd="20dp"
         android:layout_below="@+id/txtField_correo"
         app:startIconDrawable="@drawable/ic_visibility_off"
-        app:startIconTint="@color/black"
-        app:endIconTint="@color/black"
-        android:textColorHint="@color/black"
+        app:startIconTint="@color/white"
+        app:endIconTint="@color/white"
+        android:textColorHint="@color/white"
         android:backgroundTint="#20D6DD">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -152,8 +102,9 @@
             android:hint="@string/pass_registro"
             android:inputType="textPassword"
             android:textSize="14sp"
-            android:textColor="@color/black"
-            android:backgroundTint="#20D6DD"/>
+            android:textColor="@color/white"
+            android:backgroundTint="#20D6DD"
+            android:textStyle="bold"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageButton
@@ -178,14 +129,23 @@
         app:srcCompat="@drawable/ic_icons8_cancelar" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/onda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtField_password"
-        android:layout_alignBottom="@+id/txtField_apellidos"
-        android:layout_marginTop="81dp"
+        android:layout_below="@+id/imageBtn_no_registrar"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="-464dp"
         app:srcCompat="@drawable/onda" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="150dp"
+        android:layout_height="92dp"
+        android:layout_below="@+id/txt_bienvenida"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="129dp"
+        app:srcCompat="@drawable/avion" />
 
 
 </RelativeLayout>
