@@ -13,3 +13,4 @@ class registro_usuario : AppCompatActivity() {
         setContentView(R.layout.registro_usuario)
     }
 }
+
