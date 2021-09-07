@@ -10,6 +10,7 @@
     android:orientation="vertical"
     app:cardCornerRadius="4dp"
     app:cardElevation="4dp"
+    tools:context="co.edu.udea.compumovil.labs20211_gr03.lab2.fragment.ListaSitiosFragment"
     >
 
     <RelativeLayout

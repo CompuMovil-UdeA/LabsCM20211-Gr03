@@ -1,4 +1,4 @@
-package fragment
+package co.edu.udea.compumovil.labs20211_gr03.lab2.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,16 +8,16 @@ import android.view.ViewGroup
 import co.edu.udea.compumovil.labs20211_gr03.lab2.R
 
 // TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+// the co.edu.udea.compumovil.labs20211_gr03.lab2.fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [VistaDetalleSitioFragment.newInstance] factory method to
- * create an instance of this fragment.
+ * Use the [ListaSitiosFragment.newInstance] factory method to
+ * create an instance of this co.edu.udea.compumovil.labs20211_gr03.lab2.fragment.
  */
-class VistaDetalleSitioFragment : Fragment() {
+class ListaSitiosFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -30,29 +30,31 @@ class VistaDetalleSitioFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_vista_detalle_sitio, container, false)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this co.edu.udea.compumovil.labs20211_gr03.lab2.fragment
+        return inflater.inflate(R.layout.fragment_lista_sitios, container, false)
     }
 
     companion object {
         /**
          * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
+         * this co.edu.udea.compumovil.labs20211_gr03.lab2.fragment using the provided parameters.
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment VistaDetalleSitioFragment.
+         * @return A new instance of co.edu.udea.compumovil.labs20211_gr03.lab2.fragment ListaSitiosFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-                VistaDetalleSitioFragment().apply {
-                    arguments = Bundle().apply {
-                        putString(ARG_PARAM1, param1)
-                        putString(ARG_PARAM2, param2)
-                    }
+            ListaSitiosFragment().apply {
+                arguments = Bundle().apply {
+                    putString(ARG_PARAM1, param1)
+                    putString(ARG_PARAM2, param2)
                 }
+            }
     }
 }

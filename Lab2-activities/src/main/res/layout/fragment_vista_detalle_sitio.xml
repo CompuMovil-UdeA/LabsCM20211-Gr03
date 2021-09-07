@@ -6,6 +6,8 @@
     android:id="@+id/cardView"
     android:layout_margin="6dp"
     android:orientation="vertical"
+    tools:context="co.edu.udea.compumovil.labs20211_gr03.lab2.fragment.VistaDetalleSitioFragment"
+
     >
 
     <RelativeLayout
