@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D17D00"
-    tools:context=".detalleSitioTuristico">
+    android:background="#D17D00">
+
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/txt_bienvenida"
@@ -20,10 +20,8 @@
         android:text="@string/bienvenida_dtlleRegistro"
         android:textAlignment="gravity"
         android:textSize="20sp"
-        android:textStyle="bold"
         android:textColor="@color/black"
         />
-
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtField_nombreDtlle"
@@ -32,7 +30,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_below="@+id/txt_bienvenida"
-
+        android:textColorHint="@color/black"
         >
 
         <com.google.android.material.textfield.TextInputEditText
@@ -40,11 +38,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="casual"
-            android:textColor="@color/black"
             android:hint="@string/nombre"
             android:textSize="14dp"
             android:backgroundTint="#20D6DD"
             android:textStyle="bold"
+
             />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -55,6 +53,7 @@
         android:layout_below="@+id/txtField_nombreDtlle"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
+        android:textColorHint="@color/black"
         >
 
         <com.google.android.material.textfield.TextInputEditText
@@ -66,7 +65,7 @@
             android:textSize="14sp"
             android:backgroundTint="#20D6DD"
             android:textStyle="bold"
-            android:textColor="@color/black"/>
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -76,6 +75,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_below="@+id/txtField_infoGen"
+        android:textColorHint="@color/black"
         >
 
 
@@ -97,6 +97,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_below="@+id/txtField_ubicacion"
+        android:textColorHint="@color/black"
         >
 
         <com.google.android.material.textfield.TextInputEditText
@@ -108,7 +109,8 @@
             android:textSize="14sp"
             android:backgroundTint="#20D6DD"
             android:textStyle="bold"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -118,6 +120,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_below="@+id/txtField_temperatura"
+        android:textColorHint="@color/black"
         >
 
         <com.google.android.material.textfield.TextInputEditText

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Lab2-Activities</string>
+    <string name="app_name">TurisAPP</string>
 
     <!-- Registrarse labels-->
     <string name="registrarse"><u>Registrarse</u></string>
