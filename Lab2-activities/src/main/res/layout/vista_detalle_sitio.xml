@@ -4,13 +4,16 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardView"
-    android:layout_margin="3dp"
+    android:layout_margin="6dp"
+    android:orientation="vertical"
+    android:cardCornerRadius="8dp"
+    android:cardElevation="8dp"
     >
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#03AA9B"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
         >
 
         <ImageView

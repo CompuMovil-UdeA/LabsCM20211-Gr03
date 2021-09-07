@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#5900F6"
+    android:background="#FFFFFF"
     tools:context=".MainActivity">
 
     <ImageView
@@ -30,7 +30,7 @@
         android:background="@drawable/button_rounded"
         android:text="Login"
         android:textColor="@color/black"
-        android:textColorLink="#FFFFFF"
+        android:textColorLink="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +48,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginBtn"
-        android:textColor="@color/white"/>
+        android:textColor="@color/black"/>
 
     <EditText
         android:id="@+id/Password"
@@ -62,8 +62,8 @@
         android:fontFamily="casual"
         android:hint="Password"
         android:inputType="textPassword"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LoginUser"
@@ -93,8 +93,8 @@
         android:fontFamily="casual"
         android:hint="User"
         android:inputType="textEmailAddress"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
