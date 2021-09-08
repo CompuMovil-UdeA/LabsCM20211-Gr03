@@ -6,10 +6,21 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "tabla_POI")
 data class POI(
-    @PrimaryKey val sitioid: Int,
-    @ColumnInfo(name = "nombreSitio") val nombreSitio: String?,
-    @ColumnInfo(name = "informacion") val informacion: String?,
-    @ColumnInfo(name = "ubicacion") val ubicacion: String?,
-    @ColumnInfo(name = "temperatura") val temperatura: String?,
-    @ColumnInfo(name = "actividades") val actividades: String?
+    @PrimaryKey(autoGenerate = true)
+    var sitioid: Int = 0,
+
+    @ColumnInfo(name = "nombreSitio")
+    var nombreSitio: String = "",
+
+    @ColumnInfo(name = "informacion")
+    var informacion: String = "",
+
+    @ColumnInfo(name = "ubicacion")
+    var ubicacion: String = "",
+
+    @ColumnInfo(name = "temperatura")
+    var temperatura: String = "",
+
+    @ColumnInfo(name = "actividades")
+    var actividades: String = ""
 )

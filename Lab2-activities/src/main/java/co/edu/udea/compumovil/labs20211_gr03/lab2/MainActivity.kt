@@ -6,8 +6,10 @@ import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
 import android.widget.Button
+import co.edu.udea.compumovil.labs20211_gr03.lab2.databinding.ActivityMainBinding
 
 class MainActivity() : AppCompatActivity(), Parcelable {
+    private lateinit var binding: ActivityMainBinding
     lateinit var btnReg: Button
 
     constructor(parcel: Parcel) : this() {

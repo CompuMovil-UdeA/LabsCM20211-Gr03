@@ -1,151 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    tools:context=".registro_usuario">
+    xmlns:tools="http://schemas.android.com/tools">
 
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/txt_bienvenida"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="casual"
-        android:text="@string/bienvenida_registrarse"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="19sp"
-        android:textStyle="bold"
-
-        />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtField_user"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txt_bienvenida"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="79dp"
-        android:layout_marginEnd="20dp"
-        android:textColorHint="@color/black"
-        app:endIconTint="@color/black"
-        app:startIconDrawable="@drawable/ic_person"
-        app:startIconTint="@color/black">
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        tools:context=".registro_usuario">
 
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_user"
-            android:layout_width="match_parent"
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_bienvenida"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#20D6DD"
-            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
             android:fontFamily="casual"
-            android:hint="@string/user"
+            android:text="@string/bienvenida_registrarse"
+            android:textAlignment="center"
             android:textColor="@color/black"
-            app:endIconTint="@color/black"
-            app:startIconTint="@color/black" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:textSize="19sp"
+            android:textStyle="bold"
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtField_correo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_below="@+id/txtField_user"
-        app:startIconDrawable="@drawable/ic_email"
-        app:startIconTint="@color/black"
-        app:endIconTint="@color/black"
-        android:textColorHint="@color/black"
-        android:backgroundTint="#20D6DD">
+            />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_correo"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtField_user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="casual"
-            android:hint="@string/correo_registro"
-            android:inputType="textEmailSubject"
-            android:textSize="14sp"
+            android:layout_below="@+id/txt_bienvenida"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="79dp"
+            android:layout_marginEnd="20dp"
+            android:textColorHint="@color/black"
+            app:endIconTint="@color/black"
+            app:startIconDrawable="@drawable/ic_person"
+            app:startIconTint="@color/black">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#20D6DD"
+                android:textStyle="bold"
+                android:fontFamily="casual"
+                android:hint="@string/user"
+                android:textColor="@color/black"
+                app:endIconTint="@color/black"
+                app:startIconTint="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtField_correo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_below="@+id/txtField_user"
+            app:startIconDrawable="@drawable/ic_email"
             app:startIconTint="@color/black"
             app:endIconTint="@color/black"
-            android:backgroundTint="#20D6DD"
-            android:textColor="@color/black"
-            android:textStyle="bold"/>
-    </com.google.android.material.textfield.TextInputLayout>
+            android:textColorHint="@color/black"
+            android:backgroundTint="#20D6DD">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtField_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_below="@+id/txtField_correo"
-        app:startIconDrawable="@drawable/ic_visibility_off"
-        app:startIconTint="@color/black"
-        app:endIconTint="@color/black"
-        android:textColorHint="@color/black"
-        android:backgroundTint="#20D6DD">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_correo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:hint="@string/correo_registro"
+                android:inputType="textEmailSubject"
+                android:textSize="14sp"
+                app:startIconTint="@color/black"
+                app:endIconTint="@color/black"
+                android:backgroundTint="#20D6DD"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_pass_registro"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtField_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="casual"
-            android:hint="@string/pass_registro"
-            android:inputType="textPassword"
-            android:textSize="14sp"
-            android:textColor="@color/black"
-            android:backgroundTint="#20D6DD"
-            android:textStyle="bold"/>
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_below="@+id/txtField_correo"
+            app:startIconDrawable="@drawable/ic_visibility_off"
+            app:startIconTint="@color/black"
+            app:endIconTint="@color/black"
+            android:textColorHint="@color/black"
+            android:backgroundTint="#20D6DD">
 
-    <ImageButton
-        android:id="@+id/imageBtn_registrar"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/txtField_password"
-        android:layout_marginStart="130dp"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="#FFFFFF"
-        app:srcCompat="@drawable/ic_icons8_comprobado" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_pass_registro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:hint="@string/pass_registro"
+                android:inputType="textPassword"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:backgroundTint="#20D6DD"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <ImageButton
-        android:id="@+id/imageBtn_no_registrar"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/txtField_password"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="40dp"
-        android:layout_toRightOf="@+id/imageBtn_registrar"
-        android:backgroundTint="#FFFFFF"
-        app:srcCompat="@drawable/ic_icons8_cancelar" />
+        <ImageButton
+            android:id="@+id/imageBtn_registrar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/txtField_password"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="#FFFFFF"
+            app:srcCompat="@drawable/ic_icons8_comprobado" />
 
-    <ImageView
-        android:id="@+id/onda"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageBtn_no_registrar"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="-464dp"
-        app:srcCompat="@drawable/onda" />
+        <ImageButton
+            android:id="@+id/imageBtn_no_registrar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/txtField_password"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="40dp"
+            android:layout_toRightOf="@+id/imageBtn_registrar"
+            android:backgroundTint="#FFFFFF"
+            app:srcCompat="@drawable/ic_icons8_cancelar" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="150dp"
-        android:layout_height="92dp"
-        android:layout_below="@+id/txt_bienvenida"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="129dp"
-        app:srcCompat="@drawable/avion" />
+        <ImageView
+            android:id="@+id/onda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageBtn_no_registrar"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="-464dp"
+            app:srcCompat="@drawable/onda" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="150dp"
+            android:layout_height="92dp"
+            android:layout_below="@+id/txt_bienvenida"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="129dp"
+            app:srcCompat="@drawable/avion" />
 
 
-</RelativeLayout>
+    </RelativeLayout>
+</layout>

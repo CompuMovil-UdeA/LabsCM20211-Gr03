@@ -25,6 +25,7 @@ class RegistroUsuarioViewModel (private val database : UserDao) : ViewModel() {
         _navigateToLogin.value = false
     }
 
+    //agrega un usuario a la BD local
     fun insert(user: User){
         uiScope.launch {
             withContext(Dispatchers.IO){
