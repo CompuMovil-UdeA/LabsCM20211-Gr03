@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
-
-
+    tools:context=".fragment.CrearSitioFragment">
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/txt_bienvenida"
         android:layout_width="wrap_content"
@@ -33,7 +30,6 @@
         android:layout_below="@+id/txt_bienvenida"
         android:textColorHint="@color/black"
         >
-
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/input_nombreDtlle"
             android:layout_width="match_parent"
@@ -41,10 +37,8 @@
             android:fontFamily="casual"
             android:hint="@string/nombre"
             android:textSize="14dp"
-            android:backgroundTint="#20D6DD"
-            android:textStyle="bold"
-
-            />
+            android:backgroundTint="#F9FDFD"
+            android:textStyle="bold"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -64,7 +58,7 @@
             android:fontFamily="casual"
             android:hint="@string/informacion_general"
             android:textSize="14sp"
-            android:backgroundTint="#20D6DD"
+            android:backgroundTint="#F9FDFD"
             android:textStyle="bold"
             />
     </com.google.android.material.textfield.TextInputLayout>
@@ -86,7 +80,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="casual"
             android:hint="@string/ubicacion"
-            android:backgroundTint="#20D6DD"
+            android:backgroundTint="#F9FDFD"
             android:textStyle="bold"
             android:textColor="@color/black"/>
     </com.google.android.material.textfield.TextInputLayout>
@@ -108,7 +102,7 @@
             android:fontFamily="casual"
             android:hint="@string/temperatura"
             android:textSize="14sp"
-            android:backgroundTint="#20D6DD"
+            android:backgroundTint="#F9FDFD"
             android:textStyle="bold"
             android:textColor="@color/black"
             />
@@ -131,7 +125,29 @@
             android:fontFamily="casual"
             android:hint="@string/sitios_recomendados"
             android:textSize="14sp"
-            android:backgroundTint="#20D6DD"
+            android:backgroundTint="#F9FDFD"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtField_puntuacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_below="@+id/txtField_sitiosRecomendados"
+        android:textColorHint="@color/black"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_puntuacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:hint="Puntuacion"
+            android:textSize="14sp"
+            android:backgroundTint="#F9FDFD"
             android:textStyle="bold"
             android:textColor="@color/black"/>
     </com.google.android.material.textfield.TextInputLayout>
@@ -140,7 +156,7 @@
         android:id="@+id/btn_subir_archivo"
         android:layout_width="wrap_content"
         android:layout_height="45dp"
-        android:layout_below="@id/txtField_sitiosRecomendados"
+        android:layout_below="@id/txtField_puntuacion"
         android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="45dp"
@@ -158,7 +174,7 @@
         android:layout_marginStart="130dp"
         android:layout_marginTop="5dp"
         android:backgroundTint="#FBFDFD"
-        app:srcCompat="@drawable/ic_icons8_comprobado" />
+        android:src="@drawable/ic_icons8_comprobado" />
 
     <ImageButton
         android:id="@+id/imageBtn_no_registrar"
@@ -169,7 +185,7 @@
         android:layout_marginTop="5dp"
         android:layout_toRightOf="@+id/imageBtn_registrar"
         android:backgroundTint="#FBFDFD"
-        app:srcCompat="@drawable/ic_icons8_cancelar" />
+        android:src="@drawable/ic_icons8_cancelar"/>
 
     <ImageView
         android:id="@+id/imageView5"
@@ -183,8 +199,6 @@
         android:layout_marginTop="17dp"
         android:layout_marginEnd="-1dp"
         android:layout_marginBottom="-14dp"
-        app:srcCompat="@drawable/onda" />
-
+        android:src="@drawable/onda" />
 
 </RelativeLayout>
-

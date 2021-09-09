@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="sitio_turistico"
+            type="co.edu.udea.compumovil.labs20211_gr03.lab2.models.POI" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="4dp"
+        tools:context="co.edu.udea.compumovil.labs20211_gr03.lab2.fragment.ListaSitiosFragment">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/foto"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/parque" />
+
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/foto"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="casual"
+                android:text="@{sitio_turistico.nombreSitio}"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textDescri"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textTitle"
+                android:fontFamily="casual"
+                android:padding="10dp"
+                android:text="@{sitio_turistico.informacion}"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textPuntuacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textDescri"
+                android:fontFamily="casual"
+                android:padding="10dp"
+                android:text="@{sitio_turistico.puntuacion}"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/btnView"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_below="@id/textPuntuacion"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="137dp"
+                android:layout_marginRight="137dp"
+                android:src="@drawable/ic_baseline_remove_red_eye_24"
+                app:tint="@color/black" />
+
+            <ImageView
+                android:id="@+id/btnEdit"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_below="@id/textPuntuacion"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="86dp"
+                android:layout_marginRight="86dp"
+                android:src="@drawable/ic_baseline_edit_24"
+                app:tint="@color/black" />
+
+            <ImageView
+                android:id="@+id/btnDelet"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_below="@id/textPuntuacion"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="40dp"
+                android:src="@drawable/ic_baseline_delete_24"
+                app:tint="@color/black" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

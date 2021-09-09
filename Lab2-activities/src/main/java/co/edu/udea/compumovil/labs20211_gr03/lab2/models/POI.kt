@@ -22,5 +22,8 @@ data class POI(
     var temperatura: String = "",
 
     @ColumnInfo(name = "actividades")
-    var actividades: String = ""
+    var actividades: String = "",
+
+    @ColumnInfo(name = "puntuacion")
+    var puntuacion: String = ""
 )

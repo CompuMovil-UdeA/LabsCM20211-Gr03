@@ -12,11 +12,11 @@ interface POIDao {
     @Query(value = "SELECT * from tabla_POI ORDER BY sitioid DESC")
     fun getAll(): LiveData<List<POI>>
 
+    @Query(value = "SELECT * from tabla_POI where sitioid = :sitioid LIMIT 1")
+    fun getPlaceById(sitioid: Int): LiveData<POI>
+
     @Update
     fun update(request: POI)
-
-
-    // @ToDO getByID
 
     @Query(value = "DELETE from tabla_POI where sitioid = :key")
     fun delete(key:Int)
