@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import co.edu.udea.compumovil.labs20211_gr03.lab2.R
@@ -30,8 +32,10 @@ class ListaSitiosFragment : Fragment(), SitioTuristicoAdapter.SitioAdapterOnClic
         // Inflate the layout for this fragment
         binding =  DataBindingUtil.inflate( inflater, R.layout.fragment_lista_sitios, container, false)
         binding.lifecycleOwner = viewLifecycleOwner
+
+        //boton flotante navegar hacia crear sitio turistico
         binding.fabCrearSitio.setOnClickListener {
-            //redirigir al fragmento crear solicitud
+           it.findNavController().navigate(R.id.action_listaSitiosFragment_to_crearSitioFragment)
         }
 
         viewManager = LinearLayoutManager(context)
@@ -41,6 +45,7 @@ class ListaSitiosFragment : Fragment(), SitioTuristicoAdapter.SitioAdapterOnClic
             adapter = viewAdapter
         }
 
+        //instanciar BD, factory y el viewModel
         val database = SitiosTuristicosDatabase.getDatabase(requireContext())
         val factory =
             ListaSitiosViewModelFactory(
@@ -48,7 +53,7 @@ class ListaSitiosFragment : Fragment(), SitioTuristicoAdapter.SitioAdapterOnClic
             )
         viewModel = ViewModelProvider(this, factory).get(ListaSitiosViewModel::class.java)
 
-        //observamos los sitios turisticos
+        //patron observer
         viewModel.sitios.observe(viewLifecycleOwner, Observer {
             it?.let {
                 viewAdapter.submitList(it)

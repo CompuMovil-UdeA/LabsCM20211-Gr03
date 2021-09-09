@@ -9,5 +9,13 @@
         android:id="@+id/listaSitiosFragment"
         android:name="co.edu.udea.compumovil.labs20211_gr03.lab2.fragment.ListaSitiosFragment"
         android:label="fragment_lista_sitios"
-        tools:layout="@layout/fragment_lista_sitios" />
+        tools:layout="@layout/fragment_lista_sitios" >
+        <action
+            android:id="@+id/action_listaSitiosFragment_to_crearSitioFragment"
+            app:destination="@id/crearSitioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/crearSitioFragment"
+        android:name="co.edu.udea.compumovil.labs20211_gr03.lab2.fragment.CrearSitioFragment"
+        android:label="CrearSitioFragment" />
 </navigation>
