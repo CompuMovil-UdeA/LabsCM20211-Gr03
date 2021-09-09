@@ -50,6 +50,7 @@
                 android:textStyle="bold"
                 android:fontFamily="casual"
                 android:hint="@string/user"
+                android:inputType="text"
                 android:textColor="@color/black"
                 app:endIconTint="@color/black"
                 app:startIconTint="@color/black" />
@@ -74,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="casual"
                 android:hint="@string/correo_registro"
-                android:inputType="textEmailSubject"
+                android:inputType="textEmailAddress"
                 android:textSize="14sp"
                 app:startIconTint="@color/black"
                 app:endIconTint="@color/black"

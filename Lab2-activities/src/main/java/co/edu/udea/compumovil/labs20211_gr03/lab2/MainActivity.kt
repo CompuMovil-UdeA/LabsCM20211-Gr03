@@ -3,48 +3,59 @@ package co.edu.udea.compumovil.labs20211_gr03.lab2
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Parcel
-import android.os.Parcelable
-import android.widget.Button
+import android.widget.Toast
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import co.edu.udea.compumovil.labs20211_gr03.lab2.dao.UserDao
+import co.edu.udea.compumovil.labs20211_gr03.lab2.database.SitiosTuristicosDatabase
 import co.edu.udea.compumovil.labs20211_gr03.lab2.databinding.ActivityMainBinding
 
-class MainActivity() : AppCompatActivity(), Parcelable {
+class MainActivity: AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    lateinit var btnReg: Button
-
-    constructor(parcel: Parcel) : this() {
-
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        //cambiamos la forma de inflar la vista utilizando el binding
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+        //instanciamos la BD y obtenemos el Dao de usuario
+        val database = SitiosTuristicosDatabase.getDatabase(this)
+        val factory =
+            AutenticacionViewModelFactory(
+                database.userDao()
+            )
+
+        //instanciamos el viewModel
+        val viewModel = ViewModelProvider(this, factory).get(AutenticacionViewModel::class.java)
 
         //Lo envia al formulario de registro de usuario
-        btnReg = findViewById(R.id.registerBtn)
-        btnReg.setOnClickListener {
+       binding.registerBtn.setOnClickListener {
             val intent = Intent(this, registro_usuario::class.java)
             startActivity(intent)
-
         }
 
-    }
-
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
-
-    }
-
-    override fun describeContents(): Int {
-        return 0
-    }
-
-    companion object CREATOR : Parcelable.Creator<MainActivity> {
-        override fun createFromParcel(parcel: Parcel): MainActivity {
-            return MainActivity(parcel)
+        binding.loginBtn.setOnClickListener {
+            val usuario : String = binding.LoginUser.text.toString()
+            val contraseña: String = binding.Password.text.toString()
+            viewModel.authenticate(usuario, contraseña)
         }
 
-        override fun newArray(size: Int): Array<MainActivity?> {
-            return arrayOfNulls(size)
-        }
+        viewModel.isAuthenticated.observe(this, Observer { isAuth ->
+            if(isAuth){
+                val intent = Intent(this, SitiosTuristicosActivity::class.java).apply {
+                    putExtra("uid", viewModel.user.value?.uid)
+                }
+                startActivity(intent)
+            }
+        })
+
+        viewModel.showAuthError.observe(this, Observer {
+            if(it  == true){
+                Toast.makeText(this, "El usuario y/o contraseña no es válido", Toast.LENGTH_SHORT)
+                    .show()
+                viewModel.showAuthErrorIsDone()
+            }
+        })
     }
 }
