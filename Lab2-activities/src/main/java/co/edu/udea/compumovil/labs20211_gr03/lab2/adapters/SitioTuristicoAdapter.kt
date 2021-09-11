@@ -26,7 +26,7 @@ class SitioTuristicoAdapter(private val onclick: SitioAdapterOnClickListener)
 
         fun bind(item: POI) {
             with(binding) {
-               // cardView = item
+               sitioTuristico = item
 
                 btnEdit.setOnClickListener {
                     listener.btnEditOnClick(item, it)

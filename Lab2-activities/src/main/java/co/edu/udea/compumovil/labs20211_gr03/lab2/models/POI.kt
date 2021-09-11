@@ -1,9 +1,12 @@
 package co.edu.udea.compumovil.labs20211_gr03.lab2.models
 
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 @Entity(tableName = "tabla_POI")
 data class POI(
     @PrimaryKey(autoGenerate = true)
@@ -26,4 +29,4 @@ data class POI(
 
     @ColumnInfo(name = "puntuacion")
     var puntuacion: String = ""
-)
+): Parcelable

@@ -4,9 +4,9 @@ import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import androidx.versionedparcelable.ParcelField
+import kotlinx.android.parcel.Parcelize
 
-
+@Parcelize
 @Entity(tableName = "tabla_usuario")
 data class User(
         @PrimaryKey(autoGenerate = true)
@@ -20,4 +20,4 @@ data class User(
 
         @ColumnInfo(name = "correo")
         var correo: String = ""
-)
+) : Parcelable

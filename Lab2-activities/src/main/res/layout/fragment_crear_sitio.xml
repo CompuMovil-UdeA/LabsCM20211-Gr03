@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="co.edu.udea.compumovil.labs20211_gr03.lab2.fragment.CrearSitioViewModel" />
+
+    </data>
+
     <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".fragment.CrearSitioFragment">
@@ -33,7 +41,7 @@
             android:textColorHint="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/input_nombreDtlle"
+                android:id="@+id/input_nombreSitio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="casual"
@@ -197,3 +205,4 @@
             android:src="@drawable/onda" />
 
     </RelativeLayout>
+</layout>

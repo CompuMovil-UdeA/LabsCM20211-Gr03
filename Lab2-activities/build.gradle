@@ -3,6 +3,9 @@ plugins {
     id 'kotlin-android'
     //Room
     id 'kotlin-kapt'
+    //safeArgs
+    id 'androidx.navigation.safeargs'
+    id 'kotlin-parcelize'
 }
 
 android {

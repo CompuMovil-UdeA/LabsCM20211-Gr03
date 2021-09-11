@@ -35,7 +35,9 @@ class ListaSitiosFragment : Fragment(), SitioTuristicoAdapter.SitioAdapterOnClic
 
         //boton flotante navegar hacia crear sitio turistico
         binding.fabCrearSitio.setOnClickListener {
-           it.findNavController().navigate(R.id.action_listaSitiosFragment_to_crearSitioFragment)
+            view?.findNavController()?.navigate(
+                ListaSitiosFragmentDirections.actionListaSitiosFragmentToCrearSitioFragment(null)
+            )
         }
 
         viewManager = LinearLayoutManager(context)
@@ -53,7 +55,7 @@ class ListaSitiosFragment : Fragment(), SitioTuristicoAdapter.SitioAdapterOnClic
             )
         viewModel = ViewModelProvider(this, factory).get(ListaSitiosViewModel::class.java)
 
-        //patron observer
+        //patrón observer
         viewModel.sitios.observe(viewLifecycleOwner, Observer {
             it?.let {
                 viewAdapter.submitList(it)
@@ -65,11 +67,13 @@ class ListaSitiosFragment : Fragment(), SitioTuristicoAdapter.SitioAdapterOnClic
     }
 
     override fun btnEditOnClick(sitio: POI, view: View) {
-        TODO("Not yet implemented")
+        view.findNavController().navigate(
+            ListaSitiosFragmentDirections.actionListaSitiosFragmentToCrearSitioFragment(sitio)
+        )
     }
 
     override fun btnRemoveOnClick(sitio: POI, view: View) {
-        TODO("Not yet implemented")
+        viewModel.delete(sitio)
     }
 
 
