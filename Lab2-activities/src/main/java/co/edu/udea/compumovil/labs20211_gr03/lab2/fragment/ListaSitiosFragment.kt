@@ -76,5 +76,11 @@ class ListaSitiosFragment : Fragment(), SitioTuristicoAdapter.SitioAdapterOnClic
         viewModel.delete(sitio)
     }
 
+    override fun btnViewOnClick(sitio: POI, view: View) {
+        view.findNavController().navigate(
+            ListaSitiosFragmentDirections.actionListaSitiosFragmentToVistaDetalleSitioFragment(sitio)
+        )
+    }
+
 
 }

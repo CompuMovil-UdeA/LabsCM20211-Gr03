@@ -5,28 +5,31 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import co.edu.udea.compumovil.labs20211_gr03.lab2.R
+import co.edu.udea.compumovil.labs20211_gr03.lab2.databinding.FragmentVistaDetalleSitioBinding
+import co.edu.udea.compumovil.labs20211_gr03.lab2.models.POI
+import co.edu.udea.compumovil.labs20211_gr03.lab2.util.ImagenUtil
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 class VistaDetalleSitioFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var binding: FragmentVistaDetalleSitioBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this co.edu.udea.compumovil.labs20211_gr03.lab2.fragment
-        return inflater.inflate(R.layout.fragment_vista_detalle_sitio, container, false)
+
+        binding =  DataBindingUtil.inflate(inflater, R.layout.fragment_vista_detalle_sitio, container, false)
+        val args = arguments?.let {
+            VistaDetalleSitioFragmentArgs.fromBundle(
+                it
+            )
+        }
+        val sitio: POI? = args?.sitio
+        binding.sitioTuristico = sitio
+        sitio?.let {
+            ImagenUtil.assignUrlImageToView(sitio.imagenUrl, binding.thumbmail)
+        }
+        return binding.root
     }
 
 }

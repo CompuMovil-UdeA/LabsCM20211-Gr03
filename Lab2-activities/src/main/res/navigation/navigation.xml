@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_listaSitiosFragment_to_crearSitioFragment"
             app:destination="@id/crearSitioFragment" />
+        <action
+            android:id="@+id/action_listaSitiosFragment_to_vistaDetalleSitioFragment"
+            app:destination="@id/vistaDetalleSitioFragment" />
     </fragment>
     <fragment
         android:id="@+id/crearSitioFragment"
@@ -26,4 +29,19 @@
             android:id="@+id/action_crearSitioFragment_to_listaSitiosFragment"
             app:destination="@id/listaSitiosFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/vistaDetalleSitioFragment"
+        android:name="co.edu.udea.compumovil.labs20211_gr03.lab2.fragment.VistaDetalleSitioFragment"
+        android:label="VistaDetalleSitioFragment" >
+        <argument
+            android:name="sitio"
+            app:argType="co.edu.udea.compumovil.labs20211_gr03.lab2.models.POI"
+            app:nullable="false" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="co.edu.udea.compumovil.labs20211_gr03.lab2.MainActivity"
+        android:label="MainActivity" />
+
 </navigation>

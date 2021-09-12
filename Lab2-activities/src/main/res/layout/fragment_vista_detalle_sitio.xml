@@ -1,83 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/cardView"
-    android:layout_margin="6dp"
-    android:orientation="vertical"
-    tools:context="co.edu.udea.compumovil.labs20211_gr03.lab2.fragment.VistaDetalleSitioFragmentKt"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    >
+    <data>
+        <variable
+            name="sitio_turistico"
+            type="co.edu.udea.compumovil.labs20211_gr03.lab2.models.POI" />
 
-    <RelativeLayout
+    </data>
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:layout_height="match_parent"
+        android:id="@+id/cardView"
+        android:layout_margin="6dp"
+        android:orientation="vertical"
+        tools:context="co.edu.udea.compumovil.labs20211_gr03.lab2.fragment.VistaDetalleSitioFragmentKt"
+
         >
 
-        <ImageView
-            android:id="@+id/thumbmail"
-            android:layout_width="match_parent"
-            android:layout_height="320dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/parque" />
-
-        <TextView
-            android:id="@+id/textTitle"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/thumbmail"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:fontFamily="casual"
-            android:textAlignment="center"
-            android:text="Parque Tayrona"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            />
+            android:background="@color/white">
 
-        <TextView
-            android:id="@+id/textDescri"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textTitle"
-            android:fontFamily="casual"
-            android:padding="10dp"
-            android:text="Información General:"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:textAlignment="center"/>
+            <ImageView
+                android:id="@+id/thumbmail"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:scaleType="fitXY" />
 
-        <TextView
-            android:id="@+id/textPuntuacion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textDescri"
-            android:fontFamily="casual"
-            android:padding="10dp"
-            android:text="Temperatura:"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:textAlignment="center"/>
-        <TextView
-            android:id="@+id/textSitiosRecomendados"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textPuntuacion"
-            android:fontFamily="casual"
-            android:padding="10dp"
-            android:text="Sitios Recomendados:"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/thumbmail"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="casual"
+                android:textAlignment="center"
+                android:text="@{sitio_turistico.nombreSitio}"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/textDescri"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textTitle"
+                android:fontFamily="casual"
+                android:padding="10dp"
+                android:text="@{sitio_turistico.informacion}"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textAlignment="center" />
 
-</androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/textUbicacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textDescri"
+                android:fontFamily="casual"
+                android:padding="10dp"
+                android:text="@{sitio_turistico.ubicacion}"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/textPuntuacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textDescri"
+                android:fontFamily="casual"
+                android:padding="10dp"
+                android:text="@{sitio_turistico.temperatura}"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/textSitiosRecomendados"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textPuntuacion"
+                android:fontFamily="casual"
+                android:padding="10dp"
+                android:text="@{sitio_turistico.actividades}"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textAlignment="center" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

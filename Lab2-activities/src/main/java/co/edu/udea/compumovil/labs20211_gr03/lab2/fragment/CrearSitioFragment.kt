@@ -20,6 +20,7 @@ import co.edu.udea.compumovil.labs20211_gr03.lab2.database.SitiosTuristicosDatab
 import co.edu.udea.compumovil.labs20211_gr03.lab2.databinding.FragmentCrearSitioBinding
 import co.edu.udea.compumovil.labs20211_gr03.lab2.models.POI
 import co.edu.udea.compumovil.labs20211_gr03.lab2.populator.SitioTuristicoPopulator
+import co.edu.udea.compumovil.labs20211_gr03.lab2.util.ImagenUtil
 
 
 class CrearSitioFragment : Fragment() {
@@ -56,6 +57,9 @@ class CrearSitioFragment : Fragment() {
         binding.imageBtnRegistrar.setOnClickListener {
             if(sitio != null){
                 SitioTuristicoPopulator.populate(sitio, binding)
+                if(imagenUrl != ""){
+                    sitio.imagenUrl = imagenUrl
+                }
                 viewModel.update(sitio)
             } else {
                 val nuevoSitio = POI()
@@ -90,9 +94,8 @@ class CrearSitioFragment : Fragment() {
             inputTemperatura.setText(sitio?.temperatura)
             inputSitiosRecomendados.setText(sitio?.actividades)
             inputPuntuacion.setText(sitio?.puntuacion)
-            //TODO: falta mapear la imagen
-            }
         }
+    }
 
     private fun loadImage() {
         val intent = Intent(
@@ -107,31 +110,16 @@ class CrearSitioFragment : Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
         try {
             if (resultCode == RESULT_OK && requestCode == 10) {
-                    var selectedImageUri: Uri = data?.data!!
+                    val selectedImageUri: Uri = data?.data!!
                     // Get the path from the Uri
-                    val path: String? = getPathFromURI(selectedImageUri)
+                val path: String? = ImagenUtil.getPathFromURI(selectedImageUri, requireActivity())
                     path?.let {
-                        /*val f = File(it)
-                        selectedImageUri = Uri.fromFile(f)
-                        binding.imageBtnRegistrar.setImageURI(selectedImageUri)*/
                         imagenUrl = path
                     }
-                    // Set the image in ImageView
             }
         } catch (e: Exception) {
             Log.e("FileSelectorActivity", "File select error", e)
         }
     }
 
-    private fun getPathFromURI(contentUri: Uri?): String? {
-        var res: String? = null
-        val proj = arrayOf(MediaStore.Images.Media.DATA)
-        val cursor: Cursor? = requireActivity().contentResolver.query(contentUri!!, proj, null, null, null)
-        if (cursor?.moveToFirst()!!) {
-            val columnIndex: Int = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)
-            res = cursor.getString(columnIndex)
-        }
-        cursor.close()
-        return res
-    }
 }

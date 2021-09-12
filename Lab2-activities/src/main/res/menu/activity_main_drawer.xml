@@ -5,4 +5,9 @@
             android:icon="@drawable/ic_home"
             android:title="@string/menu_home" />
 
+    <item
+        android:id="@+id/mainActivity"
+        android:icon="@drawable/ic_home"
+        android:title="@string/close_account" />
+
 </menu>
