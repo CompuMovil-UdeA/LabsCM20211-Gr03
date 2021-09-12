@@ -28,5 +28,8 @@ data class POI(
     var actividades: String = "",
 
     @ColumnInfo(name = "puntuacion")
-    var puntuacion: String = ""
+    var puntuacion: String = "",
+
+    @ColumnInfo(name = "imagenUrl")
+    var imagenUrl: String = ""
 ): Parcelable

@@ -1,5 +1,8 @@
 package co.edu.udea.compumovil.labs20211_gr03.lab2.adapters
 
+import android.R
+import android.graphics.BitmapFactory
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +11,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import co.edu.udea.compumovil.labs20211_gr03.lab2.databinding.CardviewListaSitiosBinding
 import co.edu.udea.compumovil.labs20211_gr03.lab2.models.POI
+import java.io.File
+
 
 class SitioTuristicoAdapter(private val onclick: SitioAdapterOnClickListener)
     : ListAdapter<POI, SitioTuristicoAdapter.SitioTuristicoViewHolder>(SitioTuristicoDiffCallback()) {
@@ -34,6 +39,12 @@ class SitioTuristicoAdapter(private val onclick: SitioAdapterOnClickListener)
 
                 btnDelet.setOnClickListener {
                     listener.btnRemoveOnClick(item, it)
+                }
+
+                val f = File(item.imagenUrl)
+                if (f.exists()) {
+                    val myBitmap = BitmapFactory.decodeFile(f.absolutePath)
+                    binding.foto.setImageBitmap(myBitmap)
                 }
 
                 executePendingBindings()

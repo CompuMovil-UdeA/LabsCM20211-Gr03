@@ -29,8 +29,7 @@
                 android:id="@+id/foto"
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/parque" />
+                android:scaleType="fitXY"/>
 
             <TextView
                 android:id="@+id/textTitle"
