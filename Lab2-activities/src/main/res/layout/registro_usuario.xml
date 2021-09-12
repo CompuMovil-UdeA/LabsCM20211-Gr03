@@ -132,18 +132,9 @@
             app:srcCompat="@drawable/ic_icons8_cancelar" />
 
         <ImageView
-            android:id="@+id/onda"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imageBtn_no_registrar"
-            android:layout_marginTop="40dp"
-            android:layout_marginBottom="-464dp"
-            app:srcCompat="@drawable/onda" />
-
-        <ImageView
             android:id="@+id/imageView4"
             android:layout_width="150dp"
-            android:layout_height="92dp"
+            android:layout_height="72dp"
             android:layout_below="@+id/txt_bienvenida"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="2dp"

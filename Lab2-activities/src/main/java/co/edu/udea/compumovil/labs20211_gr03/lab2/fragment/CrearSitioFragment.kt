@@ -10,6 +10,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -31,6 +32,10 @@ class CrearSitioFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+
+        //Cambiar titulo al Action Bar
+        (activity as AppCompatActivity).supportActionBar?.title = "Sitio Turistico"
+
         //inflamos la vista con data binding
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_crear_sitio, container, false)
 
