@@ -75,7 +75,7 @@
                 android:id="@+id/textPuntuacion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/textDescri"
+                android:layout_below="@id/textUbicacion"
                 android:fontFamily="casual"
                 android:padding="10dp"
                 android:text="@{sitio_turistico.temperatura}"
